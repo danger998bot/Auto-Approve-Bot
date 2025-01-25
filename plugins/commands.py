@@ -185,7 +185,15 @@ async def approve_new(client, m):
             await client.send_message(LOG_CHANNEL, LOG_TEXT.format(m.from_user.id, m.from_user.mention))
         await client.approve_chat_join_request(m.chat.id, m.from_user.id)
         try:
-            await client.send_message(m.from_user.id, "{},\n\n𝖸𝗈𝗎𝗋 𝖱𝖾𝗊𝗎𝗌𝗍 𝖳𝗈 𝖩𝗈𝗂𝗇 {} 𝖺𝗌 𝖻𝖾𝖾𝗇 𝖠𝖼𝖼𝖾𝗉𝗍𝖾𝖽. by @mr_random_backup".format(m.from_user.mention, m.chat.title))
+            await client.send_message(
+        m.from_user.id,
+        f"🌟 **Hello {m.from_user.mention}!** 🌟\n\n"  # Greeting with user's mention
+        f"✅ **Your request to join** `{m.chat.title}` **has been approved!**\n\n"  # Approval confirmation with group name
+        f"🎉 **Welcome aboard!** We're thrilled to have you with us. 😊\n\n"  # Warm welcome
+        f"🔗 Feel free to connect and explore the group.\n\n"  # Encouraging engagement
+        f"💡 If you need help, reach out to @mr_random_backup.\n\n"  # Support contact information
+        f"🚀 Enjoy your time here!"  # Positive closing
+    )
         except:
             pass
     except Exception as e:
