@@ -177,7 +177,7 @@ async def accept(client, message):
 
 @Client.on_chat_join_request()
 async def approve_new(client, m):
-    if NEW_REQ_MODE == False:
+    if NEW_REQ_MODE == True:
         return 
     try:
         if not await db.is_user_exist(m.from_user.id):
